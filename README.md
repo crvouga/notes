@@ -14,9 +14,9 @@
 * ~~Add more documentation on creating client id and client secret for infisical~~
 * ~~Fix postgres dump to use not use local libraries. Use docker~~
 * ~~Update EMR backend to use allow CORS env var~~
-* Make a single source of truth for the ports
-* ws status failing to detect if frontend are running
-* make stripe CLI setup independent from local tools. Use docker
+* ~~Make a single source of truth for the ports~~
+* ~~ws status failing to detect if frontend are running~~
+* ~~make stripe CLI setup independent from local tools. Use docker~~
 * add website postgres db to local
 
 
