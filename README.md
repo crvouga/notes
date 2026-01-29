@@ -1,5 +1,10 @@
 # NOTES
 
+## Jan 29
+
+* get this PR released https://github.com/GoGeviti/geviti-web-app/pull/1631
+
+
 ## Jan 21
 
 | Setting         | Current Value                    | New Value                    |
@@ -17,7 +22,7 @@
 * ~~Make a single source of truth for the ports~~
 * ~~ws status failing to detect if frontend are running~~
 * ~~make stripe CLI setup independent from local tools. Use docker~~
-* add website postgres db to local
+* ~~add website postgres db to local~~
 
 
 ## Jan 15
