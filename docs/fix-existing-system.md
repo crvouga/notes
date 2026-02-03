@@ -22,9 +22,9 @@
 ## Solutions
 
 - Move to a monorepo
-- Rewrite parts of the app not the entire app.
+- Rewrite parts of the system not the entire system.
 - Delete old unused code
-- Identify and rewrite the buggy parts of the app. Mainly the third party integrations
+- Identify and rewrite the buggy parts of the system. Mainly the third party integrations
 - Fix the causes not the symptoms
 - Have a good CI pipeline
 - Remove unused code
