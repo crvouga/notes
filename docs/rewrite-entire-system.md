@@ -89,3 +89,56 @@ This eliminates the riskiest part of most rewrites.
 - Error rate ≤ old app
 - Zero data discrepancies
 - Rollback tested and documented
+
+## Why We Should Rewrite
+
+### The Codebase Is Beyond Incremental Fixes
+
+- **Technical debt compounds** — every fix in a messy codebase adds more mess; you're fighting the architecture
+- **Competing standards can't be unified incrementally** — you'd have to touch every file anyway
+- **The integration layer is fundamentally broken** — ad-hoc stateful webhook handlers can't be patched into idempotent sync jobs
+- **No tests means no safe refactoring** — changing old code without tests is just as risky as rewriting
+
+### Incremental Fixes Have Already Failed
+
+- **We've been "fixing" for how long?** — if incremental improvements worked, we wouldn't be having this conversation
+- **Same bugs keep coming back** — symptoms of architectural problems, not code problems
+- **Team velocity is suffering** — developers spend more time fighting the codebase than building features
+
+### A Rewrite Lets Us Do It Right
+
+- **CI/CD from day one** — not bolted on later
+- **Tests as a requirement** — not an afterthought
+- **Single standard** — one way to do things, enforced by linting
+- **Clean integrations** — idempotent sync pattern instead of ad-hoc webhooks
+- **Multi-frontend support built in** — shared API layer designed for web + Flutter
+
+### This Rewrite Is Lower Risk Than Most
+
+| Typical Rewrite Risk         | Why We Don't Have It                              |
+| ---------------------------- | ------------------------------------------------- |
+| Data migration               | **No migration** — same Postgres, Medplum, Stripe |
+| Lost business logic          | Feature parity checklist + old code as reference  |
+| Extended downtime            | Parallel deployment, gradual rollout              |
+| No rollback                  | Instant rollback via DNS/routing                  |
+| Team doesn't know the domain | Same team, same domain knowledge                  |
+
+### The Cost of Not Rewriting
+
+- **Continued data corruption** from broken integrations
+- **Continued developer frustration** and potential attrition
+- **Continued slow velocity** as codebase gets worse
+- **Technical debt interest** — the longer you wait, the harder it gets
+- **Flutter app blocked** — can't build multi-frontend support on a broken foundation
+
+### When Incremental Improvement Works vs. When It Doesn't
+
+| Incremental Works                | Rewrite Works                        |
+| -------------------------------- | ------------------------------------ |
+| Codebase is messy but structured | Codebase has no coherent structure   |
+| Problems are localized           | Problems are architectural/systemic  |
+| Tests exist for safe refactoring | No tests, refactoring is blind       |
+| Team agrees on standards         | Competing standards, no consensus    |
+| One frontend                     | Multiple frontends need shared layer |
+
+**Our situation:** No tests, no standards, systemic integration issues, multi-frontend needs. This is a rewrite case.
