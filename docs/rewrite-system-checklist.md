@@ -1,4 +1,4 @@
-# Rewrite meeting checklist
+# Rewrite
 
 ## Links
 
